@@ -1,9 +1,14 @@
 import os
 
 def traverse (path):
+
     for basepath, directories, files in os.walk (path):
         for f in files:
-            yield os.path.join (basepath, f)
+            print (os.path.join (basepath, f))
 
-for f in traverse ('.'):
-    print (f)
+
+# traverse (os.path.expanduser ("~"))
+
+import pathlib
+
+print (pathlib.Path ('traverse.py').stat().st_mode)
